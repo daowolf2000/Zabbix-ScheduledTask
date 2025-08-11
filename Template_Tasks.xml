@@ -1,329 +1,180 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<zabbix_export>
-    <version>3.4</version>
-    <date>2017-09-18T13:54:54Z</date>
-    <groups>
-        <group>
-            <name>Templates</name>
-        </group>
-    </groups>
-    <templates>
-        <template>
-            <template>Template Windows Task Scheduled</template>
-            <name>Template Windows Task Scheduled</name>
-            <description>Discover and monitor all Task from &quot;Task Scheduler Library&quot; with subfolders indicate in powershell script.</description>
-            <groups>
-                <group>
-                    <name>Templates</name>
-                </group>
-            </groups>
-            <applications>
-                <application>
-                    <name>Task Scheduled</name>
-                </application>
-            </applications>
-            <items/>
-            <discovery_rules>
-                <discovery_rule>
-                    <name>Discovery Task Scheduler</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>TaskSchedulerMonitoring[discovertasks]</key>
-                    <delay>60</delay>
-                    <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <filter>
-                        <evaltype>0</evaltype>
-                        <formula/>
-                        <conditions/>
-                    </filter>
-                    <lifetime>0</lifetime>
-                    <description>Discover all Task at &quot;Task Scheduler Libraray&quot; with Subfolders indicate in powershell script.</description>
-                    <item_prototypes>
-                        <item_prototype>
-                            <name>Task: {#APPTASKS}: Last Result</name>
-                            <type>0</type>
-                            <snmp_community/>
-                            <snmp_oid/>
-                            <key>TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}]</key>
-                            <delay>120</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description>Last Result of Task, numeric value&#13; in most cases 0 = succesfull</description>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Task Scheduled</name>
-                                </application>
-                            </applications>
-                            <valuemap>
-                                <name>Task Scheduled</name>
-                            </valuemap>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
-                            <application_prototypes/>
-                            <master_item_prototype/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Task: {#APPTASKS}: Last Run Time</name>
-                            <type>0</type>
-                            <snmp_community/>
-                            <snmp_oid/>
-                            <key>TaskSchedulerMonitoring[TaskLastRunTime,{#APPTASKS}]</key>
-                            <delay>120</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units>unixtime</units>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description>Last Run Time of Task as an unixtimestamp</description>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Task Scheduled</name>
-                                </application>
-                            </applications>
-                            <valuemap>
-                                <name>Task Scheduled</name>
-                            </valuemap>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
-                            <application_prototypes/>
-                            <master_item_prototype/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Task: {#APPTASKS}: Next Run Time</name>
-                            <type>0</type>
-                            <snmp_community/>
-                            <snmp_oid/>
-                            <key>TaskSchedulerMonitoring[TaskNextRunTime,{#APPTASKS}]</key>
-                            <delay>120</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units>unixtime</units>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description>Next Run Time of Task as an unixtimestamp</description>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Task Scheduled</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
-                            <application_prototypes/>
-                            <master_item_prototype/>
-                        </item_prototype>
-                    </item_prototypes>
-                    <trigger_prototypes>
-                        <trigger_prototype>
-                            <expression>{Template Windows Task Scheduled:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;0 and {Template Windows Task Scheduled:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;267009 and {Template Windows Task Scheduled:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;1</expression>
-                            <recovery_mode>0</recovery_mode>
-                            <recovery_expression/>
-                            <name>Last run of {#APPTASKS} with error!</name>
-                            <correlation_mode>0</correlation_mode>
-                            <correlation_tag/>
-                            <url/>
-                            <status>0</status>
-                            <priority>4</priority>
-                            <description/>
-                            <type>0</type>
-                            <manual_close>0</manual_close>
-                            <dependencies/>
-                            <tags/>
-                        </trigger_prototype>
-                    </trigger_prototypes>
-                    <graph_prototypes/>
-                    <host_prototypes/>
-                    <jmx_endpoint/>
-                </discovery_rule>
-            </discovery_rules>
-            <httptests/>
-            <macros/>
-            <templates/>
-            <screens/>
-        </template>
-    </templates>
-    <value_maps>
-        <value_map>
-            <name>Task Scheduled</name>
-            <mappings>
-                <!-- Success codes -->
-                <mapping>
-                    <value>0</value>
-                    <newvalue>Success - Operation completed successfully</newvalue>
-                </mapping>
-                
-                <!-- Task Status codes (0x41300 series) -->
-                <mapping>
-                    <value>267008</value> <!-- 0x41300 -->
-                    <newvalue>Task is ready to run at its next scheduled time</newvalue>
-                </mapping>
-                <mapping>
-                    <value>267009</value> <!-- 0x41301 -->
-                    <newvalue>Task is currently running</newvalue>
-                </mapping>
-                <mapping>
-                    <value>267010</value> <!-- 0x41302 -->
-                    <newvalue>Task is disabled</newvalue>
-                </mapping>
-                <mapping>
-                    <value>267011</value> <!-- 0x41303 -->
-                    <newvalue>Task has not yet run</newvalue>
-                </mapping>
-                <mapping>
-                    <value>267012</value> <!-- 0x41304 -->
-                    <newvalue>There are no more runs scheduled for this task</newvalue>
-                </mapping>
-                <mapping>
-                    <value>267013</value> <!-- 0x41305 -->
-                    <newvalue>One or more properties needed to run task have not been set</newvalue>
-                </mapping>
-                <mapping>
-                    <value>267014</value> <!-- 0x41306 -->
-                    <newvalue>Task was terminated by the user</newvalue>
-                </mapping>
-                <mapping>
-                    <value>267015</value> <!-- 0x41307 -->
-                    <newvalue>Either task has no triggers or existing triggers are disabled</newvalue>
-                </mapping>
-                <mapping>
-                    <value>267016</value> <!-- 0x41308 -->
-                    <newvalue>Event triggers do not have set run times</newvalue>
-                </mapping>
-                
-                <!-- Common Error codes -->
-                <mapping>
-                    <value>1</value>
-                    <newvalue>Incorrect or unknown function called</newvalue>
-                </mapping>
-                <mapping>
-                    <value>2</value>
-                    <newvalue>File not found</newvalue>
-                </mapping>
-                <mapping>
-                    <value>10</value>
-                    <newvalue>Environment is incorrect</newvalue>
-                </mapping>
-                
-                <!-- Task Scheduler specific errors (0x80041300 series) -->
-                <mapping>
-                    <value>-2147216113</value> <!-- 0x8004130F -->
-                    <newvalue>Account information corrupted</newvalue>
-                </mapping>
-                <mapping>
-                    <value>-2147216097</value> <!-- 0x8004131F -->
-                    <newvalue>An instance of this task is already running</newvalue>
-                </mapping>
-                <mapping>
-                    <value>-2147216096</value> <!-- 0x80041320 -->
-                    <newvalue>Task will not run because user is not logged on</newvalue>
-                </mapping>
-                <mapping>
-                    <value>-2147216090</value> <!-- 0x80041326 -->
-                    <newvalue>Task is disabled</newvalue>
-                </mapping>
-                
-                <!-- System errors -->
-                <mapping>
-                    <value>-2147024894</value> <!-- 0x80070002 -->
-                    <newvalue>File not found (system error)</newvalue>
-                </mapping>
-                <mapping>
-                    <value>-2147024635</value> <!-- 0x8007010B -->
-                    <newvalue>Start in directory cannot be found</newvalue>
-                </mapping>
-                <mapping>
-                    <value>-2147024675</value> <!-- 0x800704DD -->
-                    <newvalue>Service is not available</newvalue>
-                </mapping>
-                
-                <!-- Application errors -->
-                <mapping>
-                    <value>-1073741510</value> <!-- 0xC000013A -->
-                    <newvalue>Application terminated by CTRL+C</newvalue>
-                </mapping>
-                <mapping>
-                    <value>-1073479810</value> <!-- 0xC06D007E -->
-                    <newvalue>Unknown software exception</newvalue>
-                </mapping>
-                <mapping>
-                    <value>-1073741502</value> <!-- 0xC0000142 -->
-                    <newvalue>Application failed to initialize properly</newvalue>
-                </mapping>
-            </mappings>
-        </value_map>
-    </value_maps>
-</zabbix_export>
+zabbix_export:
+  version: '7.0'
+  template_groups:
+    - uuid: 80400c8bc6ec477b932244f6e1084380
+      name: Template/VLDK
+  templates:
+    - uuid: 57954842d3fb43c5923be6da6458432f
+      template: 'VLDK - Windows - Task Scheduled'
+      name: 'VLDK - Windows - Task Scheduled'
+      description: 'Discover and monitor Task Scheduler Library tasks via PowerShell.'
+      groups:
+        - name: Template/VLDK
+      discovery_rules:
+        - uuid: 2c727e6fbe3f4f26903bd376636f19aa
+          name: 'Task Scheduler'
+          type: ZABBIX_ACTIVE
+          key: 'TaskSchedulerMonitoring[discovertasks]'
+          delay: '{$TIME.DISCOVERY.UPDATE:"TASK"}'
+          filter:
+            conditions:
+              - macro: '{#APPTASKS}'
+                value: '^(?!.*(?:OneDrive|WindowsUpdate|Microsoft\.|MicrosoftEdgeUpdateTask|GoogleUpdate|CompatibilityAssistant|AdobeARM|Defender)).*$'
+                formulaid: A
+          lifetime_type: DELETE_IMMEDIATELY
+          lifetime: '0'
+          description: 'Discover tasks in Task Scheduler Library.'
+          item_prototypes:
+            - uuid: 68b168b5266c4f66864a99065c2549c3
+              name: 'Task: {#APPTASKS}: Last Result'
+              type: ZABBIX_ACTIVE
+              key: 'TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}]'
+              delay: '120'
+              history: 90d
+              description: 'Last result code of the task.'
+              valuemap:
+                name: 'Task Scheduled'
+              tags:
+                - tag: Application
+                  value: 'Task Scheduled'
+              trigger_prototypes:
+                - uuid: 38319f71a98644c2adec75c48463d4c1
+                  expression: 'last(/VLDK - Windows - Task Scheduled/TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}])<>0 and last(/VLDK - Windows - Task Scheduled/TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}])<>267008 and last(/VLDK - Windows - Task Scheduled/TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}])<>267009 and last(/VLDK - Windows - Task Scheduled/TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}])<>267011 and last(/VLDK - Windows - Task Scheduled/TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}])<>267014'
+                  name: 'Tasks: Ошибка при запуске запланированной задачи {#APPTASKS}'
+                  opdata: '{ITEM.LASTVALUE1}'
+                  priority: WARNING
+                  manual_close: 'YES'
+            - uuid: ee287193334d4630a3fb0eceaa924711
+              name: 'Task: {#APPTASKS}: Last Run Time'
+              type: ZABBIX_ACTIVE
+              key: 'TaskSchedulerMonitoring[TaskLastRunTime,{#APPTASKS}]'
+              delay: '120'
+              history: 90d
+              units: unixtime
+              description: 'Unix timestamp of last run.'
+              tags:
+                - tag: Application
+                  value: 'Task Scheduled'
+            - uuid: 4cb82427c9684d27aada5a12b6ea3cae
+              name: 'Task: {#APPTASKS}: Next Run Time'
+              type: ZABBIX_ACTIVE
+              key: 'TaskSchedulerMonitoring[TaskNextRunTime,{#APPTASKS}]'
+              delay: '120'
+              history: 90d
+              units: unixtime
+              description: 'Unix timestamp of next run.'
+              tags:
+                - tag: Application
+                  value: 'Task Scheduled'
+      valuemaps:
+        - uuid: 839b33549ce54b11927857ff95597d20
+          name: 'Task Scheduled'
+          mappings:
+            - value: '0'
+              newvalue: Success
+            - value: '267008'
+              newvalue: Ready
+            - value: '267009'
+              newvalue: Running
+            - value: '267010'
+              newvalue: Disabled
+            - value: '267011'
+              newvalue: 'Not yet run'
+            - value: '267012'
+              newvalue: 'No more runs'
+            - value: '267013'
+              newvalue: 'Not scheduled'
+            - value: '267014'
+              newvalue: 'Terminated by user'
+            - value: '267015'
+              newvalue: 'No valid triggers'
+            - value: '267016'
+              newvalue: 'Event triggers only'
+            - value: '267019'
+              newvalue: 'Some triggers failed'
+            - value: '267020'
+              newvalue: 'Batch logon problem'
+            - value: '267037'
+              newvalue: Queued
+            - value: '1'
+              newvalue: 'Invalid function'
+            - value: '2'
+              newvalue: 'File not found'
+            - value: '10'
+              newvalue: 'Bad environment'
+            - value: '0x80041309'
+              newvalue: 'Trigger not found'
+            - value: '0x8004130A'
+              newvalue: 'Task not ready'
+            - value: '0x8004130B'
+              newvalue: 'Task not running'
+            - value: '0x8004130C'
+              newvalue: 'Service not installed'
+            - value: '0x8004130D'
+              newvalue: 'Cannot open task'
+            - value: '0x8004130E'
+              newvalue: 'Invalid task'
+            - value: '0x8004130F'
+              newvalue: 'Account info missing'
+            - value: '0x80041310'
+              newvalue: 'Account not found'
+            - value: '0x80041311'
+              newvalue: 'Security DB corrupt'
+            - value: '0x80041312'
+              newvalue: 'No security services'
+            - value: '0x80041313'
+              newvalue: 'Unknown version'
+            - value: '0x80041314'
+              newvalue: 'Unsupported account option'
+            - value: '0x80041315'
+              newvalue: 'Service not running'
+            - value: '0x80041316'
+              newvalue: 'Unexpected XML node'
+            - value: '0x80041317'
+              newvalue: 'Unexpected XML namespace'
+            - value: '0x80041318'
+              newvalue: 'Invalid XML value'
+            - value: '0x80041319'
+              newvalue: 'Missing XML node'
+            - value: '0x8004131A'
+              newvalue: 'Malformed XML'
+            - value: '0x8004131B'
+              newvalue: 'Too many XML nodes'
+            - value: '0x8004131C'
+              newvalue: 'Past end boundary'
+            - value: '0x8004131F'
+              newvalue: 'Already running'
+            - value: '0x80041320'
+              newvalue: 'User not logged on'
+            - value: '0x80041321'
+              newvalue: 'Invalid task hash'
+            - value: '0x80041322'
+              newvalue: 'Service unavailable'
+            - value: '0x80041323'
+              newvalue: 'Service too busy'
+            - value: '0x80041324'
+              newvalue: 'Task attempt failed'
+            - value: '0x80041326'
+              newvalue: 'Task disabled'
+            - value: '0x80041327'
+              newvalue: 'Not v1 compatible'
+            - value: '0x80041328'
+              newvalue: 'Cannot start on demand'
+            - value: '0x80041329'
+              newvalue: 'Not UBPM compatible'
+            - value: '0x80041330'
+              newvalue: 'Deprecated feature used'
+            - value: '-2147024894'
+              newvalue: 'Sys: File not found'
+            - value: '-2147024635'
+              newvalue: 'Sys: Path not found'
+            - value: '-2147024675'
+              newvalue: 'Sys: Service missing'
+            - value: '-1073741510'
+              newvalue: 'App: CTRL+C exit'
+            - value: '-1073479810'
+              newvalue: 'App: Fatal exception'
+            - value: '-1073741502'
+              newvalue: 'App: Init failed'
+            - value: '2147942402'
+              newvalue: 'File not found'
