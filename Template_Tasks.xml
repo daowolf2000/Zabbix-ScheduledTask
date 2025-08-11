@@ -220,54 +220,51 @@
         <value_map>
             <name>Task Scheduled</name>
             <mappings>
+                <!-- Success codes -->
                 <mapping>
                     <value>0</value>
-                    <newvalue>Succes</newvalue>
+                    <newvalue>Success - Operation completed successfully</newvalue>
+                </mapping>
+                
+                <!-- Task Status codes (0x41300 series) -->
+                <mapping>
+                    <value>267008</value> <!-- 0x41300 -->
+                    <newvalue>Task is ready to run at its next scheduled time</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x41300</value>
-                    <newvalue>The task is ready to run at the next scheduled time</newvalue>
+                    <value>267009</value> <!-- 0x41301 -->
+                    <newvalue>Task is currently running</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x41301</value>
-                    <newvalue>The task is running</newvalue>
+                    <value>267010</value> <!-- 0x41302 -->
+                    <newvalue>Task is disabled</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x41303</value>
-                    <newvalue>The task has not yet finished</newvalue>
+                    <value>267011</value> <!-- 0x41303 -->
+                    <newvalue>Task has not yet run</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x41304</value>
-                    <newvalue>There are no scheduled operations for this task</newvalue>
+                    <value>267012</value> <!-- 0x41304 -->
+                    <newvalue>There are no more runs scheduled for this task</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x41306</value>
-                    <newvalue>The task is completed</newvalue>
+                    <value>267013</value> <!-- 0x41305 -->
+                    <newvalue>One or more properties needed to run task have not been set</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x800704DD</value>
-                    <newvalue>The service is not available</newvalue>
+                    <value>267014</value> <!-- 0x41306 -->
+                    <newvalue>Task was terminated by the user</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x8004130F</value>
-                    <newvalue>Corrupt Identifiers</newvalue>
+                    <value>267015</value> <!-- 0x41307 -->
+                    <newvalue>Either task has no triggers or existing triggers are disabled</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x8004131F</value>
-                    <newvalue>An instance of this task is already running</newvalue>
+                    <value>267016</value> <!-- 0x41308 -->
+                    <newvalue>Event triggers do not have set run times</newvalue>
                 </mapping>
-                <mapping>
-                    <value>0x8007010B</value>
-                    <newvalue>The &quot;Start in&quot; directory can not be found</newvalue>
-                </mapping>
-                <mapping>
-                    <value>0x80070002</value>
-                    <newvalue>One of the files is not available</newvalue>
-                </mapping>
-                <mapping>
-                    <value>0xC06D007E</value>
-                    <newvalue>Unknown software exception</newvalue>
-                </mapping>
+                
+                <!-- Common Error codes -->
                 <mapping>
                     <value>1</value>
                     <newvalue>Incorrect or unknown function called</newvalue>
@@ -278,7 +275,53 @@
                 </mapping>
                 <mapping>
                     <value>10</value>
-                    <newvalue>Environment Incorrect</newvalue>
+                    <newvalue>Environment is incorrect</newvalue>
+                </mapping>
+                
+                <!-- Task Scheduler specific errors (0x80041300 series) -->
+                <mapping>
+                    <value>-2147216113</value> <!-- 0x8004130F -->
+                    <newvalue>Account information corrupted</newvalue>
+                </mapping>
+                <mapping>
+                    <value>-2147216097</value> <!-- 0x8004131F -->
+                    <newvalue>An instance of this task is already running</newvalue>
+                </mapping>
+                <mapping>
+                    <value>-2147216096</value> <!-- 0x80041320 -->
+                    <newvalue>Task will not run because user is not logged on</newvalue>
+                </mapping>
+                <mapping>
+                    <value>-2147216090</value> <!-- 0x80041326 -->
+                    <newvalue>Task is disabled</newvalue>
+                </mapping>
+                
+                <!-- System errors -->
+                <mapping>
+                    <value>-2147024894</value> <!-- 0x80070002 -->
+                    <newvalue>File not found (system error)</newvalue>
+                </mapping>
+                <mapping>
+                    <value>-2147024635</value> <!-- 0x8007010B -->
+                    <newvalue>Start in directory cannot be found</newvalue>
+                </mapping>
+                <mapping>
+                    <value>-2147024675</value> <!-- 0x800704DD -->
+                    <newvalue>Service is not available</newvalue>
+                </mapping>
+                
+                <!-- Application errors -->
+                <mapping>
+                    <value>-1073741510</value> <!-- 0xC000013A -->
+                    <newvalue>Application terminated by CTRL+C</newvalue>
+                </mapping>
+                <mapping>
+                    <value>-1073479810</value> <!-- 0xC06D007E -->
+                    <newvalue>Unknown software exception</newvalue>
+                </mapping>
+                <mapping>
+                    <value>-1073741502</value> <!-- 0xC0000142 -->
+                    <newvalue>Application failed to initialize properly</newvalue>
                 </mapping>
             </mappings>
         </value_map>
